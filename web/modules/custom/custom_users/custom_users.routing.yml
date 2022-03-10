@@ -1,0 +1,7 @@
+custom_users.myprofile:
+  path: '/updateprofiles'
+  defaults:
+    _controller: '\Drupal\custom_users\Controller\MyProfileController::updateUserWithVacinationStatus'
+    _title: 'My Profile'
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,12 @@
+<?php
+
+/**
+ * @File
+ * Example custom module for Drupal 8.
+ */
+ 
+/**
+ * Implementing hook_menu().
+ */
+
+?>

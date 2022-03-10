@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ * Theme override to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ */
+#}
+
+{% for row in rows %}
+  {%
+    set row_classes = [
+      default_row_class ? 'views-row',
+    ]
+  %}
+	<div{{ row.attributes.addClass(row_classes) }}>
+		<div class="main homepage">
+			<span class="bg-image" style="background-image: url('{{file_url(row.content['#row']._entity.field_slider_banner.entity.uri.value)}}');"></span>
+			<div class="content-frame home">
+				<div class="column-wrapper one-column">
+					<div class="column column-1">
+						<div class="content">
+							<h1 class="tr-head tr-head-1" style="opacity: 1;">{{row.content['#row']._entity.field_slider_caption.value}}</h1>
+						</div>
+					</div>
+				</div>
+				<div class="bg-video-wrapper">
+					<video loop="" autoplay="" class="bg-video" id="video-oasen" muted="" style="top: -223px; width: 1536px;">
+						<source src="{{file_url(row.content['#row']._entity.field_slider.entity.uri.value)}}" type="video/mp4">
+					</video>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endfor %}

@@ -1,0 +1,8 @@
+name: 'Custom Users Register'
+type: module
+description: 'This module is used for Custom User Profile'
+core: '8.x'
+core_version_requirement: ^8 || ^9
+project: 'Hp Learning'
+datestamp: 1495974785
+package: Custom
